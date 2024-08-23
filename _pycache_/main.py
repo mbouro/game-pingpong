@@ -21,8 +21,8 @@ class Pong:
 
     def show_welcome_screen(self):
         self.screen.fill("black")
-        title = self.font.render("Welcome to Ping Pong", True, self.color)
-        instructions = self.font.render("Press SPACE to Start", True, self.color)
+        title = self.font.render("Willkommen bei Ping Pong Spiel", True, self.color)
+        instructions = self.font.render("Druck SPACE zum Starten", True, self.color)
         self.screen.blit(title, (WIDTH // 2 - title.get_width() // 2, HEIGHT // 3))
         self.screen.blit(instructions, (WIDTH // 2 - instructions.get_width() // 2, HEIGHT // 2))
         self.draw()
@@ -62,8 +62,8 @@ class Pong:
         pygame.draw.rect(self.screen, self.color, play_again_button)
         pygame.draw.rect(self.screen, self.color, quit_button)
         
-        play_again_text = self.font.render("Play Again", True, pygame.Color("black"))
-        quit_text = self.font.render("Quit", True, pygame.Color("black"))
+        play_again_text = self.font.render("Noch einmal", True, pygame.Color("black"))
+        quit_text = self.font.render("Gehen", True, pygame.Color("black"))
         
         self.screen.blit(game_over_text, (WIDTH // 2 - game_over_text.get_width() // 2, HEIGHT // 3))
         self.screen.blit(play_again_text, (play_again_button.x + (play_again_button.width - play_again_text.get_width()) // 2, play_again_button.y + (play_again_button.height - play_again_text.get_height()) // 2))
@@ -77,7 +77,7 @@ class Pong:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if play_again_button.collidepoint(event.pos):
-                        return  # Return to the main loop to start a new game
+                        return  # A new game can start
                     elif quit_button.collidepoint(event.pos):
                         pygame.quit()
                         sys.exit()

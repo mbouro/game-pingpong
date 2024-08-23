@@ -46,7 +46,8 @@ class Table:
         if self.ball.rect.centery > self.playerA.rect.centery:
             if self.playerA.rect.bottom < HEIGHT:
                 self.playerA.move_bottom()
-
+    #Schläger mit Maus
+    
     #def player_move(self):
     #    mouse_y = pygame.mouse.get_pos()[1]
     #    self._bot_opponent()
@@ -85,10 +86,10 @@ class Table:
         self.playerB.update(self.screen)
         self._ball_hit()
         if self.playerA.score == self.score_limit:
-            self.winner = "Opponent"
+            self.winner = "Gegner"
             self._game_end()
         elif self.playerB.score == self.score_limit:
-            self.winner = "You"
+            self.winner = "Du"
             self._game_end()
         if not self.game_over:
             self.ball.update(self.screen)
